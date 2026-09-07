@@ -76,7 +76,7 @@ const signifier = localFont({
 
 export const metadata: Metadata = {
   title: "Isabella Linde",
-  description: "Isabella's portfolio site.",
+  description: "Isabella's portfolio.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

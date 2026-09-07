@@ -20,7 +20,7 @@
   --color-bg-muted: var(--neutral-100);
   --color-accent: var(--royal-blue-500);
   --color-bg: var(--color-white);
-  
+
   --color-bg-inverse: var(--neutral-950);
   --color-text-inverse: var(--color-white);
   --color-text-muted-inverse: var(--neutral-100);
@@ -48,3 +48,74 @@ body {
 @utility small-caps {
   font-variant-caps: small-caps;
 }
+
+/* Text styles from Figma. px -> rem at a 16px root, % letter-spacing -> em
+   (both relative to the same font-size, so the number carries over as-is).
+   "Auto" line-height -> `normal` (the font's own metrics), stated explicitly
+   so it can't be inherited away later. */
+@utility text-h1 {
+  font-family: var(--font-signifier);
+  font-weight: 700; /* Bold */
+  font-size: 6rem; /* 96px */
+  line-height: 4.375rem; /* 70px */
+  letter-spacing: -0.06em; /* -6% */
+}
+
+@utility text-h2 {
+  font-family: var(--font-signifier);
+  font-weight: 500; /* Medium */
+  font-size: 6rem; /* 96px */
+  line-height: 7rem; /* 112px */
+}
+
+@utility text-h3 {
+  font-family: var(--font-signifier);
+  font-weight: 400; /* Regular */
+  font-size: 3rem; /* 48px */
+  line-height: 3rem; /* 48px */
+}
+
+@utility text-h4 {
+  font-family: var(--font-signifier);
+  font-weight: 500; /* Medium */
+  font-size: 2rem; /* 32px */
+  line-height: 2rem; /* 32px */
+}
+
+@utility text-h5 {
+  font-family: var(--font-signifier);
+  font-weight: 400; /* Regular */
+  font-size: 2rem; /* 32px */
+  line-height: 2.25rem; /* 36px */
+}
+
+@utility text-h6 {
+  font-family: var(--font-signifier);
+  font-weight: 400; /* Regular */
+  font-size: 1.5rem; /* 24px */
+  line-height: normal; /* Auto */
+  letter-spacing: -0.03em; /* -3% */
+}
+
+@utility text-body-sans {
+  font-family: var(--font-sans);
+  font-weight: 400; /* Regular */
+  font-size: 1.125rem; /* 18px */
+  line-height: normal; /* Auto */
+}
+
+@utility text-body-serif {
+  font-family: var(--font-signifier);
+  font-weight: 400; /* Regular */
+  font-size: 1.125rem; /* 18px */
+  line-height: normal; /* Auto */
+}
+
+@utility text-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 400; /* Regular */
+  font-size: 1.125rem; /* 18px */
+  line-height: normal; /* Auto */
+  font-variant-caps: small-caps; /* Small Caps Forced */
+}
+
