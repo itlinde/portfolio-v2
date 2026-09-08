@@ -13,7 +13,7 @@
 
 @theme inline {
   /* semantic colors - what actually gets used in le code */
-  --color-text-title: var(--neutral-900);
+  --color-text-main: var(--neutral-900);
   --color-text-body: var(--neutral-700);
   --color-text-muted: var(--neutral-600);
   --color-line: var(--neutral-400);
@@ -35,12 +35,6 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--color-bg);
-  color: var(--color-text-body);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 /* Source Sans Pro ships no true smcp/c2sc glyphs, so this is the browser's
@@ -119,3 +113,8 @@ body {
   font-variant-caps: small-caps; /* Small Caps Forced */
 }
 
+body {
+  background: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}

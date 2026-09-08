@@ -2,37 +2,17 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const sourceSansPro = localFont({
+const sourceSans3 = localFont({
   variable: "--font-source-sans",
   src: [
     {
-      path: "./fonts/source-sans-pro-regular.woff2",
-      weight: "400",
+      path: "./fonts/source-sans-3-variable.woff2",
+      weight: "200 900",
       style: "normal",
     },
     {
-      path: "./fonts/source-sans-pro-regular-italic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "./fonts/source-sans-pro-semibold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "./fonts/source-sans-pro-semibold-italic.woff2",
-      weight: "600",
-      style: "italic",
-    },
-    {
-      path: "./fonts/source-sans-pro-bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "./fonts/source-sans-pro-bold-italic.woff2",
-      weight: "700",
+      path: "./fonts/source-sans-3-variable-italic.woff2",
+      weight: "200 900",
       style: "italic",
     },
   ],
@@ -83,9 +63,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${sourceSansPro.variable} ${signifier.variable} h-full antialiased`}
+      className={`${sourceSans3.variable} ${signifier.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col text-balance">{children}</body>
     </html>
   );
 }
