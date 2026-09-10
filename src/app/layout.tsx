@@ -6,12 +6,12 @@ const sourceSans3 = localFont({
   variable: "--font-source-sans",
   src: [
     {
-      path: "./fonts/source-sans-3-variable.woff2",
+      path: "../fonts/source-sans-3-variable.woff2",
       weight: "200 900",
       style: "normal",
     },
     {
-      path: "./fonts/source-sans-3-variable-italic.woff2",
+      path: "../fonts/source-sans-3-variable-italic.woff2",
       weight: "200 900",
       style: "italic",
     },
@@ -22,32 +22,32 @@ const signifier = localFont({
   variable: "--font-signifier",
   src: [
     {
-      path: "./fonts/test-signifier-regular.woff2",
+      path: "../fonts/test-signifier-regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/test-signifier-regular-italic.woff2",
+      path: "../fonts/test-signifier-regular-italic.woff2",
       weight: "400",
       style: "italic",
     },
     {
-      path: "./fonts/test-signifier-medium.woff2",
+      path: "../fonts/test-signifier-medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/test-signifier-medium-italic.woff2",
+      path: "../fonts/test-signifier-medium-italic.woff2",
       weight: "500",
       style: "italic",
     },
     {
-      path: "./fonts/test-signifier-bold.woff2",
+      path: "../fonts/test-signifier-bold.woff2",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/test-signifier-bold-italic.woff2",
+      path: "../fonts/test-signifier-bold-italic.woff2",
       weight: "700",
       style: "italic",
     },

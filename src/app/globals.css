@@ -9,6 +9,7 @@
   --neutral-900: #1B1A19;
   --neutral-950: #222222;
   --royal-blue-500: #0F3D6A;
+  --royal-blue-700: #07325C;
 }
 
 @theme inline {
@@ -19,6 +20,7 @@
   --color-line: var(--neutral-400);
   --color-bg-muted: var(--neutral-100);
   --color-accent: var(--royal-blue-500);
+  --color-accent-hover: var(--royal-blue-700);
   --color-bg: var(--color-white);
 
   --color-bg-inverse: var(--neutral-950);
@@ -50,16 +52,16 @@
 @utility text-h1 {
   font-family: var(--font-signifier);
   font-weight: 700; /* Bold */
-  font-size: 6rem; /* 96px */
-  line-height: 4.375rem; /* 70px */
+  font-size: 5rem; /* 96px */
+  line-height: 4rem; /* 70px */
   letter-spacing: -0.06em; /* -6% */
 }
 
 @utility text-h2 {
   font-family: var(--font-signifier);
   font-weight: 500; /* Medium */
-  font-size: 6rem; /* 96px */
-  line-height: 7rem; /* 112px */
+  font-size: 5rem; /* 96px */
+  line-height: 4rem; /* 70px */
 }
 
 @utility text-h3 {
