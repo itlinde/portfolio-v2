@@ -6,7 +6,7 @@ export default function Footer() {
     >
       <div id="contact" className="flex flex-col gap-4">
         <hr className="border-line-inverse" />
-        <p className="text-subtitle text-text-inverse">contact</p>
+        <p className="text-subtitle text-text-inverse">connect</p>
         <a
           href="mailto:isabellalinde1770@gmail.com"
           className="text-h3 text-text-inverse"
@@ -18,6 +18,12 @@ export default function Footer() {
           className="text-h3 text-text-inverse"
         >
           LinkedIn
+        </a>
+        <a
+          href="https://github.com/itlinde"
+          className="text-h3 text-text-inverse"
+        >
+          Github
         </a>
       </div>
       <div id="footer-bottom" className="flex flex-col gap-4">

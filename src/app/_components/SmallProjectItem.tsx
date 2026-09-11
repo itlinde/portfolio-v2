@@ -5,17 +5,21 @@ interface SmallProjectItemProps {
   title: string;
   date: string;
   tags: string[];
+  link: string;
+  tooltipContent: string;
 }
 
 export default function SmallProjectItem({
   title,
   date,
   tags,
+  link,
+  tooltipContent
 }: SmallProjectItemProps) {
   return (
     <div>
-      <CursorTooltip content="open in github" duration={0.3}>
-        <a href="#" className="flex gap-4 w-full items-center">
+      <CursorTooltip content={tooltipContent} duration={0.3}>
+        <a href={link} target="_blank" className="flex gap-4 w-full items-center">
           <h6 className="text-h6 w-fit shrink-0 text-nowrap">{title}</h6>
           {tags.map((tag) => (
             <WorkTag key={tag} tagName={tag} />

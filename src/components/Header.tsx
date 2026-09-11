@@ -76,7 +76,7 @@ export default function Header({ enableWorkReveal = false }: HeaderProps) {
         <a href="#" className="text-body-serif">
           Me
         </a>
-        <a href="#" className="text-body-serif ">
+        <a href="/#work" className="text-body-serif ">
           Work
         </a>
         <a href="#" className="text-body-serif">

@@ -102,6 +102,7 @@ export default function LewsWorkshop() {
             tags={["qa", "minor software development", "co-op"]}
             date="summer - fall 2025"
             link="/gravit-e"
+            tooltipContent="click to open"
           />
         </div>
       </section>

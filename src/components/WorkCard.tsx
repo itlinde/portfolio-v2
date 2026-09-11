@@ -9,7 +9,9 @@ interface WorkCardProps {
   tags: string[];
   date: string;
   image?: { src: string; alt: string };
+  video?: { src: string; }
   link: string;
+  tooltipContent: string;
 }
 
 export default function WorkCard({
@@ -18,12 +20,14 @@ export default function WorkCard({
   tags,
   date,
   image,
+  video,
   link,
+  tooltipContent,
 }: WorkCardProps) {
   return (
     <div className="">
-      <CursorTooltip content="view project" duration={0.3}>
-        <Link href={link} className="group flex gap-8 h-96">
+      <CursorTooltip content={tooltipContent} duration={0.3}>
+        <Link href={link} target="_blank" className="group flex gap-8 h-96">
           <div className="min-w-2xs w-3/5 flex flex-col h-full justify-between">
             <div className="flex flex-col gap-4">
               <h5 className="text-h5">{title}</h5>
@@ -45,9 +49,18 @@ export default function WorkCard({
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover"
+                className="absolute inset-0 w-full h-full scale-75 object-contain"
               />
             )}
+            {video &&
+              <video
+              src={video.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full scale-90 object-contain" />
+            }
             { /* getting rid of this for now bc it's not mobile friendly at all lol */ }
             {/* <a href="#" className="hidden group-hover:flex absolute inset-y-0 left-0 z-10 w-1/2 p-6 items-center justify-start hover:bg-accent-hover">
               <p className="text-h6 text-text-inverse">

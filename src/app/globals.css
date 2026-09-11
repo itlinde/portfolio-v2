@@ -32,11 +32,16 @@
   --font-signifier: var(--font-signifier);
 }
 
-@media (prefers-color-scheme: dark) {
+/* no dark mode yet */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 /* Source Sans Pro ships no true smcp/c2sc glyphs, so this is the browser's
