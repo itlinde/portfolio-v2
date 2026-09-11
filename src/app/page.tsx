@@ -1,9 +1,20 @@
+"use client"
+
+import { useState } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WorkCard from "@/components/WorkCard";
 import SmallProjectItem from "@/app/_components/SmallProjectItem";
+import PROJECTS from "@/lib/project-list";
+import { Project } from "@/types/project";
 
 export default function Home() {
+  const [filter, setFilter] = useState('');
+
+  function updateFilters() {
+    
+  }
+
   return (
     <div className="">
       <Header enableWorkReveal />
@@ -30,41 +41,33 @@ export default function Home() {
             </h3>
             <div id="filter-bar" className="flex gap-6 text-text-muted">
               <p className="text-subtitle text-text-body">filter:</p>
-              <p>All</p>
-              <p>Engineering</p>
-              <p>Design</p>
+              <p onClick="">
+                All
+              </p>
+              <p>
+                Engineering
+              </p>
+              <p>
+                Design
+              </p>
             </div>
           </div>
           <div id="work-cards" className="flex flex-col gap-8">
-            <WorkCard
-              title="Gravit-e Technologies Inc."
-              description="Squashed bugs and caught edge cases across 20+ projects in custom software development."
-              tags={["qa", "minor software development", "co-op"]}
-              date="summer - fall 2025"
-              link="https://www.gravit-e.ca/"
-              image={{ src: "/gravit-e-logo.webp", alt: "gravit-e logo" }}
-              tooltipContent="click to learn more"
-            />
-            <WorkCard
-              title="Lew's Workshop"
-              description="Built and designed a make-your-own keychain site from start to finish."
-              tags={["web development", "product design", "supabase", "next.js", "figma"]}
-              date="summer - fall 2025"
-              link="https://www.lewswork.shop/"
-              image= {{ src: "/lews-logo.svg", alt: "lew's workshop logo" }}
-              // video={{ src: "/lews-demo-1.mov" }}
-              tooltipContent="click to open site"
-            />
-            {/* <WorkCard
-              title="Drift"
-              description="Designed an app to simplify trip-planning for spontaneous travellers."
-              tags={["ux research", "interaction design", "figma"]}
-              date="summer - fall 2025"
-              link="https://www.lewswork.shop/"
-              image= {{ src: "/lews-logo.svg", alt: "lew's workshop logo" }}
-              // video={{ src: "/lews-demo-1.mov" }}
-              tooltipContent="click to open prototype"
-            /> */}
+            { PROJECTS
+              .filter( project => project.mainProject ) // only show projs where mainProject = true
+              .map ((project: Project) => {
+              return (
+                <WorkCard
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  date={project.date}
+                  link={project.link}
+                  image={project.image}
+                  tooltipContent={project.tooltipContent}
+                />
+              )}
+            )}
           </div>
           <div id="small-projs" className="min-h-screen flex flex-col place-content-center">
             <div className="mb-8">
@@ -72,38 +75,23 @@ export default function Home() {
                 Exploration
               </h4>
               <p className="text-body-sans text-text-muted">
-                Smaller projects, experiments, and trying new things! Click on one to learn more.
+                Smaller projects, experiments, and trying new things! Click one to open.
               </p>
             </div>
             <div id="small-proj-list" className="flex flex-col gap-4">
-              <SmallProjectItem
-                title="UBC Engineering Undergrad Society | Week E⁰ 2026 Site"
-                date="2026"
-                tags={["webflow"]}
-                link="https://weeke0.ubcengineers.ca/"
-                tooltipContent="live site"
-              />
-              <SmallProjectItem
-                title="Line Following Robot"
-                date="2025"
-                tags={["arduino", "c++"]}
-                link="https://github.com/itlinde/line-following-robot"
-                tooltipContent="see github"
-              />
-              { /* don't have a github I can link to rn */ }
-              {/* <SmallProjectItem
-                title="Fictional Bakery Database"
-                date="2025"
-                tags={["relational database", "mysql"]}
-                tooltipContent=""
-              /> */}
-              <SmallProjectItem
-                title="Mastery Tracker"
-                date="2024"
-                tags={["ios application", "swift"]}
-                link="https://github.com/itlinde/mastery-tracker-app"
-                tooltipContent="see github"
-              />
+              { PROJECTS
+                .filter( project => !project.mainProject ) // only show projs where mainProject != true
+                .map ((project: Project) => {
+                return (
+                  <SmallProjectItem
+                    title={project.title}
+                    date={project.date}
+                    tags={project.tags}
+                    link={project.link}
+                    tooltipContent={project.tooltipContent}
+                  />
+                )}
+              )}
             </div>
           </div>
         </section>

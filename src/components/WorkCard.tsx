@@ -5,7 +5,7 @@ import CursorTooltip from "@/components/CursorTooltip";
 
 interface WorkCardProps {
   title: string;
-  description: string;
+  description?: string;
   tags: string[];
   date: string;
   image?: { src: string; alt: string };
@@ -31,7 +31,9 @@ export default function WorkCard({
           <div className="min-w-2xs w-3/5 flex flex-col h-full justify-between">
             <div className="flex flex-col gap-4">
               <h5 className="text-h5">{title}</h5>
-              <p className="text-body-sans text-text-body">{description}</p>
+              {description && (
+                <p className="text-body-sans text-text-body">{description}</p>
+              )}
               <div className="flex gap-1 flex-wrap">
                 {tags.map((tag) => (
                   <WorkTag key={tag} tagName={tag} />

@@ -1,0 +1,76 @@
+import { Project } from "@/types/project";
+
+const PROJECTS: Project[] = [
+  {
+    title: "Gravit-e Technologies Inc.",
+    description: "Squashed bugs and caught edge cases across 20+ projects in custom software development.",
+    tags: ["qa", "minor software development", "co-op"],
+    types: ['engineering'],
+    mainProject: true,
+    date: "summer - fall 2025",
+    link: "https://www.gravit-e.ca/", 
+    image: { src: "/gravit-e-logo.webp", alt: "gravit-e logo" },
+    tooltipContent: "click to learn more",
+  },
+  {
+    title: "Lew's Workshop",
+    description: "Built and designed a make-your-own keychain site from start to finish.",
+    tags: ["web development", "product design", "supabase", "next.js", "figma"],
+    types: ['engineering', 'design'],
+    mainProject: true,
+    date: "summer - fall 2025",
+    link: "https://www.lewswork.shop/",
+    image: { src: "/lews-logo.svg", alt: "lew's workshop logo" },
+    tooltipContent: "click to open site",
+  },
+  // {
+  //   title: "Drift",
+  //   description: "Designed an app to simplify trip-planning for spontaneous travellers.",
+  //   tags: ["ux research", "interaction design", "figma"],
+  //   types: ['design'],
+  //   mainProject: true,
+  //   date: "summer - fall 2025",
+  //   link: "",
+  //   image: {},
+  //   tooltipContent: "click to open prototype",
+  // },
+  {
+    title: "UBC Engineering Undergrad Society | Week E⁰ 2026 Site",
+    tags: ["webflow"],
+    types: ['engineering', 'design'],
+    mainProject: false,
+    date: "2026",
+    link: "https://weeke0.ubcengineers.ca/",
+    tooltipContent: "live site",
+  },
+  {
+    title: "Line Following Robot",
+    tags: ["arduino", "c++"],
+    types: ['engineering'],
+    mainProject: false,
+    date: "2025",
+    link: "https://github.com/itlinde/line-following-robot",
+    tooltipContent: "see github",
+  },
+  // don't have a github I can link to rn
+  // {
+  //   title: "Fictional Bakery Database",
+  //   tags: ["relational database", "mysql"],
+  //   types: ['engineering'],
+  //   mainProject: false,
+  //   date: "2025",
+  //   link: "",
+  //   tooltipContent: "",
+  // },
+  {
+    title: "Mastery Tracker",
+    tags: ["ios application", "swift"],
+    types: ['engineering'],
+    mainProject: false,
+    date: "2024",
+    link: "https://github.com/itlinde/mastery-tracker-app",
+    tooltipContent: "see github",
+  },
+]
+
+export default PROJECTS;
