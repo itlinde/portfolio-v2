@@ -19,7 +19,7 @@ export default function SmallProjectItem({
   return (
     <div>
       <CursorTooltip content={tooltipContent} duration={0.3}>
-        <a href={link} target="_blank" className="flex gap-4 w-full items-center">
+        <a href={link} target="_blank" rel="noopener noreferrer" className="flex gap-4 w-full items-center">
           <h6 className="text-h6 w-fit shrink-0 text-nowrap">{title}</h6>
           {tags.map((tag) => (
             <WorkTag key={tag} tagName={tag} />

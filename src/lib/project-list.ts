@@ -4,7 +4,7 @@ const PROJECTS: Project[] = [
   {
     title: "Gravit-e Technologies Inc.",
     description: "Squashed bugs and caught edge cases across 20+ projects in custom software development.",
-    tags: ["qa", "minor software development", "co-op"],
+    tags: ["co-op", "qa", "php", "laravel"],
     types: ['engineering'],
     mainProject: true,
     date: "summer - fall 2025",
@@ -15,12 +15,12 @@ const PROJECTS: Project[] = [
   {
     title: "Lew's Workshop",
     description: "Built and designed a make-your-own keychain site from start to finish.",
-    tags: ["web development", "product design", "supabase", "next.js", "figma"],
+    tags: ["software development", "supabase", "next.js", "product design", "figma"],
     types: ['engineering', 'design'],
     mainProject: true,
     date: "summer - fall 2025",
     link: "https://www.lewswork.shop/",
-    image: { src: "/lews-logo.svg", alt: "lew's workshop logo" },
+    image: { src: "/lews-mockup.png", alt: "lew's workshop logo" },
     tooltipContent: "click to open site",
   },
   // {

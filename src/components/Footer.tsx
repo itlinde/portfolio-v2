@@ -16,6 +16,7 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/isabellalinde/"
           target="_blank"
+          rel="noopener noreferrer"
           className="text-h3 text-text-inverse"
         >
           LinkedIn
@@ -23,6 +24,7 @@ export default function Footer() {
         <a
           href="https://github.com/itlinde"
           target="_blank"
+          rel="noopener noreferrer"
           className="text-h3 text-text-inverse"
         >
           Github
@@ -30,7 +32,7 @@ export default function Footer() {
       </div>
       <div id="footer-bottom" className="flex flex-col gap-4">
         <p className="text-subtitle text-text-inverse">
-          made with next.js, figma, claude and lots of love :)
+          made with next.js, gsap, figma and lots of love :)
         </p>
         <hr className="border-line-inverse" />
         <div className="flex justify-between">

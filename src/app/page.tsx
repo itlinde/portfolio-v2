@@ -11,6 +11,8 @@ import { Project, ProjectType } from "@/types/project";
 export default function Home() {
   const [filter, setFilter] = useState<'all' | ProjectType>('all');
 
+  const filterOptions = ['all', 'engineering', 'design']
+
   return (
     <div className="">
       <Header enableWorkReveal />
@@ -33,22 +35,20 @@ export default function Home() {
         <section id="work" className="flex flex-col place-self-center min-w-3/4 scroll-mt-36">
           <div id="work-header" className="flex flex-col gap-4 pb-14">
             <h3 id="work-heading" className="text-h3">
-              Projects and Experience
+              projects and experience
             </h3>
             <div id="filter-bar" className="flex gap-6 text-text-muted">
               <p className="text-subtitle text-text-body">filter:</p>
-              <button onClick={() => { setFilter('all')}} 
-                      className={`cursor-pointer ${filter === 'all' ? "font-medium text-text-body" : "font-normal"}`}>
-                All
+              {filterOptions.map((option: String, index) => {
+                return (
+                  <button 
+                      key={option}
+                      onClick={() => { setFilter(option as ProjectType)}} 
+                      className={`cursor-pointer ${filter === option ? "font-medium text-text-body" : "font-normal"}`}>
+                {option}
               </button>
-              <button onClick={() => { setFilter('engineering')}}
-                      className={`cursor-pointer ${filter === 'engineering' ? "font-medium text-text-body" : "font-normal"}`}>
-                Engineering
-              </button>
-              <button onClick={() => { setFilter('design')}}
-                      className={`cursor-pointer ${filter === 'design' ? "font-medium text-text-body" : "font-normal"}`}>
-                Design
-              </button>
+                )
+              })}
             </div>
           </div>
           <div id="work-cards" className="flex flex-col gap-8">
@@ -60,6 +60,7 @@ export default function Home() {
               .map ((project: Project) => {
               return (
                 <WorkCard
+                  key={project.title}
                   title={project.title}
                   description={project.description}
                   tags={project.tags}
@@ -74,10 +75,10 @@ export default function Home() {
           <div id="small-projs" className="min-h-screen py-32 flex flex-col place-content-center">
             <div className="mb-8">
               <h4 className="text-h4 mb-2">
-                Exploration
+                exploration
               </h4>
               <p className="text-body-sans text-text-muted">
-                Smaller projects, experiments, and trying new things! Click one to open.
+                smaller projects, experiments, and trying new things! click one to open.
               </p>
             </div>
             <div id="small-proj-list" className="flex flex-col gap-4">
@@ -86,6 +87,7 @@ export default function Home() {
                 .map ((project: Project) => {
                 return (
                   <SmallProjectItem
+                    key={project.title}
                     title={project.title}
                     date={project.date}
                     tags={project.tags}
