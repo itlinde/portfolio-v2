@@ -45,9 +45,17 @@ export default function LewsWorkshop() {
             <p className="text-subtitle text-text-muted whitespace-nowrap">
               see it in action
             </p>
-            <a href="" className="flex gap-2 text-body-serif items-center text-text-body">
+            <a href="https://www.lewswork.shop/" className="flex gap-2 text-body-serif items-center text-text-body">
               <p>
                 Live Site
+              </p>
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.618652 11.6067L11.3503 0.875M0.618652 0.875L11.3503 0.875V11.6067" stroke="#8D8D8C" strokeWidth="1.75"/>
+              </svg>
+            </a>
+            <a href="https://github.com/itlinde/lewsworkshop" className="flex gap-2 text-body-serif items-center text-text-body">
+              <p>
+                Github
               </p>
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.618652 11.6067L11.3503 0.875M0.618652 0.875L11.3503 0.875V11.6067" stroke="#8D8D8C" strokeWidth="1.75"/>

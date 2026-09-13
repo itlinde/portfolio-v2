@@ -15,12 +15,14 @@ export default function Footer() {
         </a>
         <a
           href="https://www.linkedin.com/in/isabellalinde/"
+          target="_blank"
           className="text-h3 text-text-inverse"
         >
           LinkedIn
         </a>
         <a
           href="https://github.com/itlinde"
+          target="_blank"
           className="text-h3 text-text-inverse"
         >
           Github

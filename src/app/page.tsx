@@ -6,20 +6,16 @@ import Footer from "@/components/Footer";
 import WorkCard from "@/components/WorkCard";
 import SmallProjectItem from "@/app/_components/SmallProjectItem";
 import PROJECTS from "@/lib/project-list";
-import { Project } from "@/types/project";
+import { Project, ProjectType } from "@/types/project";
 
 export default function Home() {
-  const [filter, setFilter] = useState('');
-
-  function updateFilters() {
-    
-  }
+  const [filter, setFilter] = useState<'all' | ProjectType>('all');
 
   return (
     <div className="">
       <Header enableWorkReveal />
       <main className="p-6">
-        <section id="hero" className="h-screen flex flex-col gap-8 pt-[40vh] mb-16 place-self-center">
+        <section id="hero" className="h-screen py-32 flex flex-col gap-8 pt-[40vh] mb-16 place-self-center">
           <h3 className="text-h3 text-center">
             hopelessly devoted to details.
           </h3>
@@ -41,20 +37,26 @@ export default function Home() {
             </h3>
             <div id="filter-bar" className="flex gap-6 text-text-muted">
               <p className="text-subtitle text-text-body">filter:</p>
-              <p onClick="">
+              <button onClick={() => { setFilter('all')}} 
+                      className={`cursor-pointer ${filter === 'all' ? "font-medium text-text-body" : "font-normal"}`}>
                 All
-              </p>
-              <p>
+              </button>
+              <button onClick={() => { setFilter('engineering')}}
+                      className={`cursor-pointer ${filter === 'engineering' ? "font-medium text-text-body" : "font-normal"}`}>
                 Engineering
-              </p>
-              <p>
+              </button>
+              <button onClick={() => { setFilter('design')}}
+                      className={`cursor-pointer ${filter === 'design' ? "font-medium text-text-body" : "font-normal"}`}>
                 Design
-              </p>
+              </button>
             </div>
           </div>
           <div id="work-cards" className="flex flex-col gap-8">
             { PROJECTS
-              .filter( project => project.mainProject ) // only show projs where mainProject = true
+              .filter( project => project.mainProject   // only show projs where mainProject = true
+                && ( filter === 'all' || project.types.includes(filter) )) // checks the first OR conditional -> if first conditional is true, the next one gets skipped n keeps going 
+                                                                // .: since filter === all will always be true when filter is 'all', the .includes() never runs 
+                                                                // if filter != 'all', the next part gets evaluated & .includes applies the filter 
               .map ((project: Project) => {
               return (
                 <WorkCard
@@ -69,7 +71,7 @@ export default function Home() {
               )}
             )}
           </div>
-          <div id="small-projs" className="min-h-screen flex flex-col place-content-center">
+          <div id="small-projs" className="min-h-screen py-32 flex flex-col place-content-center">
             <div className="mb-8">
               <h4 className="text-h4 mb-2">
                 Exploration
