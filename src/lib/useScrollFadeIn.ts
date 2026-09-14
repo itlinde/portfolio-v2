@@ -30,6 +30,7 @@ export function useScrollFadeIn(selector: string = ".scroll-fade") {
           duration: 0.6,
           stagger: 0.1,
           overwrite: "auto",
+          clearProps: "transform",
         });
       },
     });
