@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import { SplitText } from "gsap/SplitText";
 import Header from "@/components/Header";
@@ -11,6 +10,7 @@ import WorkCard from "@/components/WorkCard";
 import SmallProjectItem from "@/app/_components/SmallProjectItem";
 import PROJECTS from "@/lib/project-list";
 import { Project, ProjectType } from "@/types/project";
+import { useScrollFadeIn } from "@/lib/useScrollFadeIn";
 
 export default function Home() {
   const [filter, setFilter] = useState<'all' | ProjectType>('all');
@@ -78,33 +78,7 @@ export default function Home() {
     };
   }, []);
 
-  // Reveal content blocks (marked with .scroll-fade) as they individually
-  // scroll into view — fade up, once, no hide-on-scroll-back-up. Separate
-  // from the hero intro effect above since these are independent concerns
-  // (one runs once on mount, this one reacts to scroll for the page's life).
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const els = gsap.utils.toArray<HTMLElement>(".scroll-fade");
-    if (els.length === 0) return;
-
-    gsap.set(els, { opacity: 0, y: 30 });
-
-    const triggers = ScrollTrigger.batch(els, {
-      start: "top 85%",
-      onEnter: (batch) => {
-        gsap.to(batch, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          overwrite: "auto",
-        });
-      },
-    });
-
-    return () => triggers.forEach((t) => t.kill());
-  }, []);
+  useScrollFadeIn();
 
   return (
     <>
@@ -195,7 +169,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <div className="scroll-fade">
+      <div className="">
         <Footer />
       </div>
     </>
