@@ -10,9 +10,10 @@ interface HeaderProps {
    * must not opt in, or ScrollTrigger creates a dangling instance with
    * nothing to measure. Defaults to off. */
   enableWorkReveal?: boolean;
+  shadowTrigger?: string;
 }
 
-export default function Header({ enableWorkReveal = false }: HeaderProps) {
+export default function Header({ enableWorkReveal = false, shadowTrigger }: HeaderProps) {
   const [showWork, setShowWork] = useState(false);
   const cornerRef = useRef<HTMLAnchorElement>(null);
 
@@ -62,6 +63,42 @@ export default function Header({ enableWorkReveal = false }: HeaderProps) {
     return () => trigger.kill();
   }, [enableWorkReveal]);
 
+
+  // make grey blob appear after scrolling past a certain point (can customize the point )
+  useEffect(() => {
+    if (!shadowTrigger) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const trigger = ScrollTrigger.create({
+      trigger: shadowTrigger,
+      start: "top 15%",
+      onEnter: () => {
+        gsap.set("#nav-bg", {
+          scaleX: 0,
+        })
+        gsap.to("#nav-bg", {
+          duration: 0.3,
+          scaleX: 1,
+          ease: "power3.out",
+          overwrite: "auto",
+        })
+      },
+      onLeaveBack: () => {
+        gsap.to("#nav-bg", {
+          duration: 0.3,
+          ease: "power3.in",
+          scaleX: 0,
+          overwrite: "auto",
+        })
+      }
+    })
+
+    return () => trigger.kill();
+  }, [shadowTrigger])
+
+  // must always be clear unless scrolling past a certain point 
+
   return (
     <div
       id="header"
@@ -72,16 +109,17 @@ export default function Header({ enableWorkReveal = false }: HeaderProps) {
       </a>
       { /* TO DO: make the grey bubble only appear after scrolling down the page a certain amount. 
                   make sure the point at which the grey thing appears can be customized per page */ }
-      <div className="flex gap-8 justify-self-center px-4 py-2 bg-bg-muted rounded-3xl">
-        <a href="#" className="text-body-serif">
-          Me
+      <div id="nav-bar" className="flex gap-8 justify-self-center px-4 py-2 relative ">
+        <a href="/about" className="text-body-serif">
+          me
         </a>
         <a href="/#work" className="text-body-serif ">
-          Work
+          work
         </a>
-        <a href="#" className="text-body-serif">
-          Constantly Creating
+        <a href="/creating" className="text-body-serif">
+          constantly creating
         </a>
+        <div id="nav-bg" className="bg-bg-muted scale-x-0 origin-center absolute inset-0 -z-1 rounded-3xl pointer-events-none"/>
       </div>
       <a
         ref={cornerRef}
