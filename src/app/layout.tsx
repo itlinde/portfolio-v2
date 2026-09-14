@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const sourceSans3 = localFont({
   variable: "--font-source-sans",
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${sourceSans3.variable} ${signifier.variable} h-full antialiased`}
     >
+      <Analytics/>
       <body className="min-h-full flex flex-col text-balance">{children}</body>
     </html>
   );
