@@ -106,7 +106,7 @@ export default function Home() {
             </h3>
             <div id="filter-bar" className="flex gap-6 text-text-muted">
               <p className="text-subtitle text-text-body">filter:</p>
-              {filterOptions.map((option: String, index) => {
+              {filterOptions.map((option: string, index) => {
                 return (
                   <button 
                       key={option}
