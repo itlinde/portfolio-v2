@@ -69,6 +69,11 @@ export default function Header({ enableWorkReveal = false, shadowTrigger }: Head
   useEffect(() => {
     if (!shadowTrigger) return;
 
+    // gsap doesn't work well with css vars, so we're pre-reading the var values and passing them to gsap later
+    const styles = getComputedStyle(document.documentElement);
+    const textBodyColor = styles.getPropertyValue('--color-text-body').trim();
+    const textMutedColor = styles.getPropertyValue('--color-text-muted').trim();
+
     gsap.registerPlugin(ScrollTrigger);
 
     const trigger = ScrollTrigger.create({
@@ -84,6 +89,10 @@ export default function Header({ enableWorkReveal = false, shadowTrigger }: Head
           ease: "power3.out",
           overwrite: "auto",
         })
+        gsap.to("#nav-bar", {
+          duration: 0.3,
+          color: textBodyColor,
+        })
       },
       onLeaveBack: () => {
         gsap.to("#nav-bg", {
@@ -91,6 +100,10 @@ export default function Header({ enableWorkReveal = false, shadowTrigger }: Head
           ease: "power3.in",
           scaleX: 0,
           overwrite: "auto",
+        })
+        gsap.to("#nav-bar", {
+          duration: 1,
+          color: textMutedColor,
         })
       }
     })
@@ -105,12 +118,12 @@ export default function Header({ enableWorkReveal = false, shadowTrigger }: Head
       id="header"
       className="grid grid-cols-[1fr_auto_1fr] items-center p-7 fixed top-0 left-0 right-0 z-40"
     >
-      <a href="/" className="text-body-serif justify-self-start px-2 py-1 bg-bg rounded-xs">
+      <a href="/" className="text-body-serif justify-self-start px-2 py-1 bg-bg rounded-xs text-text-muted">
         Isabella Linde
       </a>
       { /* TO DO: make the grey bubble only appear after scrolling down the page a certain amount. 
                   make sure the point at which the grey thing appears can be customized per page */ }
-      <div id="nav-bar" className="flex gap-8 justify-self-center px-4 py-2 relative ">
+      <div id="nav-bar" className="flex gap-8 justify-self-center px-4 py-2 relative text-text-muted">
         <Link href="/about/#" className="text-body-serif">
           me
         </Link>
@@ -128,7 +141,7 @@ export default function Header({ enableWorkReveal = false, shadowTrigger }: Head
         className={
           showWork
             ? "text-h1 absolute right-6 top-1/2 -translate-y-1/2"
-            : "text-body-serif justify-self-end"
+            : "text-body-serif justify-self-end text-text-muted"
         }
       >
         © 2026
