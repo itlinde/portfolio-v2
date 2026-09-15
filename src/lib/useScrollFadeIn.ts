@@ -35,6 +35,6 @@ export function useScrollFadeIn(selector: string = ".scroll-fade") {
       },
     });
 
-    return () => triggers.forEach((t) => t.kill());
+    return () => triggers.forEach((t) => t.kill()); // run gsap, then kill gsap instances so they're not floating aroound in the dom
   }, [selector]);
 }

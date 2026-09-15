@@ -11,30 +11,33 @@ export default function About() {
   return (
     <>
       <Header shadowTrigger="#me-pic"/>
-      <main className="flex flex-col place-self-center mt-20 text-body-serif mx-12 max-w-prose pb-32 text-pretty">
+      <main className="scroll-fade flex flex-col place-self-center pt-20 text-body-serif mx-12 max-w-prose pb-32 text-pretty">
         <Image
               id="me-pic"
               src="/me.png"
               alt="picture of me!"
               width="450"
               height="450"
-              className="scroll-fade object-cover w-96 h-96 place-self-center my-16 rounded-md"
+              className="object-cover rounded-md w-96 h-96 place-self-center my-16"
         />
-        <p className="scroll-fade text-text-main">
+        <p className="text-text-main">
           {ABOUT.greeting}
         </p>
-        <p className="scroll-fade text-body-serif text-text-muted pb-8">
+        <p className="text-body-serif text-text-muted pb-8">
           {ABOUT.subheading}
         </p>
         <div id="main-text" className="flex flex-col gap-4">
-          <p className="scroll-fade">
+          <p className="">
             {ABOUT.body}
           </p>
-          <p className="scroll-fade">
+          <p className="">
             {ABOUT.body2}
           </p>
-          <p className="scroll-fade">
+          <p className="">
             {ABOUT.body3}
+          </p>
+          <p className="">
+            {ABOUT.body4}
           </p>
         </div>
       </main>

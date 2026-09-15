@@ -90,12 +90,12 @@ export default function Home() {
           </h3>
           <div ref={subheadingRef} className="place-self-center text-body-serif max-w-[90vw] min-w-[50vw] flex justify-between w-fill">
             <div className="flex flex-col text-start">
-              <p>Computer Engineering Student</p>
-              <p>& Developer and Product Designer</p>
+              <p className="opacity-0">Computer Engineering Student</p>
+              <p className="opacity-0">& Developer and Product Designer</p>
             </div>
             <div className="flex flex-col text-end">
-              <p>@ University of British Columbia</p>
-              <p>based in Vancouver, Canada</p>
+              <p className="opacity-0">@ University of British Columbia</p>
+              <p className="opacity-0">based in Vancouver, Canada</p>
             </div>
           </div>
         </section>

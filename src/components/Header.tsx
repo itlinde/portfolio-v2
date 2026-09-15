@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
@@ -110,20 +111,20 @@ export default function Header({ enableWorkReveal = false, shadowTrigger }: Head
       { /* TO DO: make the grey bubble only appear after scrolling down the page a certain amount. 
                   make sure the point at which the grey thing appears can be customized per page */ }
       <div id="nav-bar" className="flex gap-8 justify-self-center px-4 py-2 relative ">
-        <a href="/about" className="text-body-serif">
+        <Link href="/about/#" className="text-body-serif">
           me
-        </a>
-        <a href="/#work" className="text-body-serif ">
+        </Link>
+        <Link href="/#work" className="text-body-serif ">
           work
-        </a>
-        <a href="/creating" className="text-body-serif">
+        </Link>
+        <Link href="/creating" className="text-body-serif">
           constantly creating
-        </a>
+        </Link>
         <div id="nav-bg" className="bg-bg-muted scale-x-0 origin-center absolute inset-0 -z-1 rounded-3xl pointer-events-none"/>
       </div>
-      <a
+      <a // using a instead of Link here bc 'a' handles the href conditional, which Link doesn't
         ref={cornerRef}
-        href={showWork ? "#work" : undefined}
+        href={showWork ? "/#work" : undefined}
         className={
           showWork
             ? "text-h1 absolute right-6 top-1/2 -translate-y-1/2"
