@@ -88,11 +88,11 @@ export default function Home() {
       <main className="p-6">
         <section id="hero" className="h-screen py-32 flex flex-col gap-8 pt-[40vh] mb-16 place-self-center">
           <h3 ref={heroRef} id="hero-text" className="text-h3 text-center opacity-0">
-            building from prototype to prod
+            good type, well-typed :)
           </h3>
           <div ref={subheadingRef} className="place-self-center text-body-serif max-w-[90vw] min-w-[50vw] flex justify-between w-fill">
             <div className="flex flex-col text-start">
-              <p className="opacity-0">Computer Engineering Student</p>
+              <p className="opacity-0">Computer engineering student</p>
               <p className="opacity-0">Design Engineer</p>
             </div>
             <div className="flex flex-col text-end">
