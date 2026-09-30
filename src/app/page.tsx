@@ -72,6 +72,8 @@ export default function Home() {
       );
     }
 
+    // TODO: add the header to this sequence so it starts appearing with the subheadings
+
     return () => {
       tl.kill();
       split.revert();
@@ -86,12 +88,12 @@ export default function Home() {
       <main className="p-6">
         <section id="hero" className="h-screen py-32 flex flex-col gap-8 pt-[40vh] mb-16 place-self-center">
           <h3 ref={heroRef} id="hero-text" className="text-h3 text-center opacity-0">
-            hopelessly devoted to details.
+            building from prototype to prod
           </h3>
           <div ref={subheadingRef} className="place-self-center text-body-serif max-w-[90vw] min-w-[50vw] flex justify-between w-fill">
             <div className="flex flex-col text-start">
               <p className="opacity-0">Computer Engineering Student</p>
-              <p className="opacity-0">& Developer and Product Designer</p>
+              <p className="opacity-0">Design Engineer</p>
             </div>
             <div className="flex flex-col text-end">
               <p className="opacity-0">@ University of British Columbia</p>
@@ -102,7 +104,7 @@ export default function Home() {
         <section id="work" className="flex flex-col place-self-center min-w-3/4 scroll-mt-36">
           <div id="work-header" className="scroll-fade flex flex-col gap-4 pb-14">
             <h3 id="work-heading" className="text-h3">
-              projects and experience
+              selected work
             </h3>
             <div id="filter-bar" className="flex gap-6 text-text-muted">
               <p className="text-subtitle text-text-body">filter:</p>

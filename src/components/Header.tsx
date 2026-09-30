@@ -119,7 +119,7 @@ export default function Header({ enableWorkReveal = false, shadowTrigger }: Head
       className="grid grid-cols-[1fr_auto_1fr] items-center p-7 fixed top-0 left-0 right-0 z-40"
     >
       <a href="/" className="text-body-serif justify-self-start px-2 py-1 bg-bg rounded-xs text-text-muted">
-        Isabella Linde
+        isabella linde
       </a>
       { /* TO DO: make the grey bubble only appear after scrolling down the page a certain amount. 
                   make sure the point at which the grey thing appears can be customized per page */ }

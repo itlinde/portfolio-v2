@@ -27,7 +27,7 @@ export default function WorkCard({
   return (
     <div className="">
       <CursorTooltip content={tooltipContent} duration={0.3}>
-        <Link href={link} target="_blank" rel="noopener noreferrer" className="group flex gap-8 h-96">
+        <Link href={link} target="_blank" rel="noopener noreferrer" className="group flex gap-8 h-80">
           <div className="min-w-2xs w-3/5 flex flex-col h-full justify-between">
             <div className="flex flex-col gap-4">
               <h5 className="text-h5">{title}</h5>
